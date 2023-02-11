@@ -7,7 +7,7 @@
 all: init
 
 .NOTPARALLEL:
-.PHONY: init setup start up build shell halt delete stats
+.PHONY: init setup start up build shell watch halt delete stats
 
 exec-in-docker = docker-compose exec game
 
@@ -27,6 +27,9 @@ build:								## Build all containers
 
 shell: container-game				## Enter into game container
 	${exec-in-docker} bash
+
+watch:								## Watch tests
+	watchexec --exts "ex,exs" -cr mix test
 
 halt:								## Shoutdown all containers
 	docker-compose down

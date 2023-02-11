@@ -87,6 +87,7 @@ jobs:
           mkdir -p priv/plts
           mix dialyzer --plt
           mix dialyzer
+          mix credo --strict
 
       - name: Check security vulnerabilities
         run: |

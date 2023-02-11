@@ -31,7 +31,17 @@
           "apps/*/test/",
           "apps/*/web/"
         ],
-        excluded: [~r"/_build/", ~r"/deps/", ~r"/node_modules/"]
+        excluded: [
+          ~r"/_build/",
+          ~r"/deps/",
+          ~r"/node_modules/",
+          "lib/planning_poker_web/components/core_components.ex",
+          "lib/planning_poker_web/telemetry.ex",
+          "lib/planning_poker_web/controllers/page_html.ex",
+          "lib/planning_poker_web/controllers/error_json.ex",
+          "lib/planning_poker_web/controllers/error_html.ex",
+          "lib/planning_poker_web/components/layouts.ex"
+        ]
       },
       #
       # Load and configure plugins here:

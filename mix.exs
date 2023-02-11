@@ -42,8 +42,8 @@ defmodule PlanningPoker.MixProject do
       {:gettext, "~> 0.20"},
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
-      {:credo, "~> 1.6", only: :dev, runtime: false},
-      {:dialyxir, "~> 1.2", only: :dev, runtime: false},
+      {:credo, "~> 1.6", only: [:test, :dev], runtime: false},
+      {:dialyxir, "~> 1.2", only: [:test, :dev], runtime: false},
       {:excoveralls, "~> 0.15.3", only: :test}
     ]
   end

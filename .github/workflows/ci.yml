@@ -41,6 +41,7 @@ jobs:
           key: ${{ runner.os }}-mix-${{ env.cache-name }}-${{ hashFiles('**/mix.lock') }}
           restore-keys: |
             ${{ runner.os }}-mix-${{ env.cache-name }}-
+            ${{ runner.os }}-mix-
 
       - name: Cache compiled build
         id: cache-build
@@ -49,6 +50,18 @@ jobs:
           cache-name: cache-compiled-build
         with:
           path: _build
+          key: ${{ runner.os }}-mix-${{ env.cache-name }}-${{ hashFiles('**/mix.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-mix-${{ env.cache-name }}-
+            ${{ runner.os }}-mix-
+
+      - name: Cache PLT
+        id: cache-plt
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-plt
+        with:
+          path: priv/plts
           key: ${{ runner.os }}-mix-${{ env.cache-name }}-${{ hashFiles('**/mix.lock') }}
           restore-keys: |
             ${{ runner.os }}-mix-${{ env.cache-name }}-
@@ -68,3 +81,9 @@ jobs:
 
       - name: Run code coverage
         run: mix coveralls.github
+
+      - name: Static code analysis
+        run: |
+          mkdir -p priv/plts
+          mix dialyzer --plt
+          mix dialyzer

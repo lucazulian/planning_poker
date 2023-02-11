@@ -44,6 +44,8 @@ defmodule PlanningPoker.MixProject do
       {:plug_cowboy, "~> 2.5"},
       {:credo, "~> 1.6", only: [:test, :dev], runtime: false},
       {:dialyxir, "~> 1.2", only: [:test, :dev], runtime: false},
+      {:mix_audit, "~> 2.0", only: [:dev, :test], runtime: false},
+      {:sobelow, "~> 0.11", only: [:dev, :test], runtime: false},
       {:excoveralls, "~> 0.15.3", only: :test}
     ]
   end

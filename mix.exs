@@ -28,10 +28,10 @@ defmodule PlanningPoker.MixProject do
 
   defp deps do
     [
-      {:phoenix, "~> 1.7.0-rc.2", override: true},
-      {:phoenix_html, "~> 3.0"},
+      {:phoenix, "~> 1.7.0", override: true},
+      {:phoenix_html, "~> 3.3"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
-      {:phoenix_live_view, "~> 0.18.3"},
+      {:phoenix_live_view, "~> 0.18.16"},
       {:heroicons, "~> 0.5"},
       {:floki, ">= 0.30.0", only: :test},
       {:phoenix_live_dashboard, "~> 0.7.2"},
@@ -78,7 +78,7 @@ defmodule PlanningPoker.MixProject do
       ignore_warnings: ".dialyzer_ignore.exs",
       plt_add_apps: [:ex_unit, :mix],
       plt_add_deps: :app_tree,
-      plt_file: {:no_warn, "priv/plts/planning_poker_1_14_3_otp_25_2_2.plt"}
+      plt_file: {:no_warn, "priv/plts/planning_poker_1_14_3_otp_25_2_3.plt"}
     ]
   end
 end

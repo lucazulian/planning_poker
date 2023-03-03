@@ -19,7 +19,7 @@ jobs:
     name: Install OTP and Elixir
     strategy:
       matrix:
-        otp: ['25.2.2']
+        otp: ['25.2.3']
         elixir: ['1.14.3']
     steps:
       - name: Set up Elixir
